@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Mentor | Contact form</title>
+  <link rel="stylesheet" href="assets/css/pages/index/index.css">
+  <script src="assets/js/index/index.js" defer></script>
+</head>
+
+<body>
+  <form class="form-main" action="#" method="post">
+
+    <h1 class="form-main__title">contact us</h1>
+
+    <div class="form-main__form-header">
+      <div class="form-main__input-wrapper">
+        <label class="form-main__input-wrapper__label" for="form-name">First name</label>
+        <input class="form-main__input-wrapper__input-model" type="text" name="form-name" id="form-name">
+        <small class="form-main_input-wrapper__error-msg disabled-visibility">This field is required</small>
+      </div>
+
+      <div class="form-main__input-wrapper">
+        <label class="form-main__input-wrapper__label" for="form-last-name">Last name</label>
+        <input class="form-main__input-wrapper__input-model" type="text" name="form-last-name" id="form-last-name">
+        <small class="form-main_input-wrapper__error-msg disabled-visibility">This field is required</small>
+      </div>
+    </div>
+
+    <div class="form-main__input-wrapper">
+      <label class="form-main__input-wrapper__label" for="form-email">Email</label>
+      <input class="form-main__input-wrapper__input-model" type="email" name="form-email" id="form-email">
+      <small class="form-main_input-wrapper__error-msg disabled-visibility">Please enter a valid email address</small>
+    </div>
+
+    <div class="form-main__input-wrapper">
+      <label class="form-main__input-wrapper__label" for="">Query type</label>
+      <div class="form-main__contact-type-wrapper">
+        <div class="form-main__input-wrapper__input-model centralize">
+          <input type="radio" name="query-type" id="">
+          <label for="form-main__contact-type-wrapper__label">Lorem</label>
+        </div>
+        <div class="form-main__input-wrapper__input-model centralize">
+          <input type="radio" name="query-type" id="">
+          <label for="form-main__contact-type-wrapper__label">Lorem</label>
+        </div>
+      </div>
+      <small class="form-main_input-wrapper__error-msg disabled-visibility">Please select a query type</small>
+    </div>
+
+    <!-- <div class="form-main__contact-type-wrapper">
+      <label class="form-main__input-wrapper__label" for="">Query Type</label>
+    </div> -->
+  </form>
+</body>
+
+</html>
