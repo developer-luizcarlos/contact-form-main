@@ -39,19 +39,31 @@
       <div class="form-main__contact-type-wrapper">
         <div class="form-main__input-wrapper__input-model centralize">
           <input type="radio" name="query-type" id="">
-          <label for="form-main__contact-type-wrapper__label">Lorem</label>
+          <label class="form-main__input-wrapper__label after-disabled" for="">general enquiry</label>
         </div>
         <div class="form-main__input-wrapper__input-model centralize">
           <input type="radio" name="query-type" id="">
-          <label for="form-main__contact-type-wrapper__label">Lorem</label>
+          <label class="form-main__input-wrapper__label after-disabled" for="">support request</label>
         </div>
       </div>
       <small class="form-main_input-wrapper__error-msg disabled-visibility">Please select a query type</small>
     </div>
 
-    <!-- <div class="form-main__contact-type-wrapper">
-      <label class="form-main__input-wrapper__label" for="">Query Type</label>
-    </div> -->
+    <div class="form-main__input-wrapper">
+      <label class="form-main__input-wrapper__label" for="">Query type</label>
+      <textarea class="form-main__input-wrapper__input-model  form-main__textarea-for-user" name="form-main-textarea"
+        id="form-main-textarea"></textarea>
+      <small class="form-main_input-wrapper__error-msg disabled-visibility">This field is required</small>
+    </div>
+
+    <div class="form-main__data-consent-wrapper">
+      <div class="form-main__data-consent-wrapper__consent-header">
+        <input type="checkbox" name="" id="">
+        <label for="">i consent to being contacted by the team</label>
+      </div>
+    </div>
+
+    <button class="form-main__btn-submit" type="submit">submit</button>
   </form>
 </body>
 
