@@ -18,7 +18,8 @@
       <div class="form-main__input-wrapper">
         <label class="form-main__input-wrapper__label" for="form-name">First name</label>
         <input class="form-main__input-wrapper__input-model" type="text" name="form-name" id="form-name">
-        <small class="form-main_input-wrapper__error-msg disabled-visibility">This field is required</small>
+        <small class="form-main_input-wrapper__error-msg disabled-visibility" id="name-error-msg">This field is
+          required</small>
       </div>
 
       <div class="form-main__input-wrapper">
@@ -38,19 +39,20 @@
       <label class="form-main__input-wrapper__label" for="">Query type</label>
       <div class="form-main__contact-type-wrapper">
         <div class="form-main__input-wrapper__input-model centralize">
-          <input type="radio" name="query-type" id="">
-          <label class="form-main__input-wrapper__label after-disabled" for="">general enquiry</label>
+          <input type="radio" name="query-type" id="query-type__input">
+          <label class="form-main__input-wrapper__label after-disabled" for="query-type__input">general enquiry</label>
         </div>
         <div class="form-main__input-wrapper__input-model centralize">
-          <input type="radio" name="query-type" id="">
-          <label class="form-main__input-wrapper__label after-disabled" for="">support request</label>
+          <input type="radio" name="query-type" id="support-request__input">
+          <label class="form-main__input-wrapper__label after-disabled" for="support-request__input">support
+            request</label>
         </div>
       </div>
       <small class="form-main_input-wrapper__error-msg disabled-visibility">Please select a query type</small>
     </div>
 
     <div class="form-main__input-wrapper">
-      <label class="form-main__input-wrapper__label" for="">Query type</label>
+      <label class="form-main__input-wrapper__label" for="">Message</label>
       <textarea class="form-main__input-wrapper__input-model  form-main__textarea-for-user" name="form-main-textarea"
         id="form-main-textarea"></textarea>
       <small class="form-main_input-wrapper__error-msg disabled-visibility">This field is required</small>
@@ -58,9 +60,11 @@
 
     <div class="form-main__data-consent-wrapper">
       <div class="form-main__data-consent-wrapper__consent-header">
-        <input type="checkbox" name="" id="">
-        <label for="">i consent to being contacted by the team</label>
+        <input type="checkbox" name="" id="data-consent-input">
+        <label for="data-consent-input">i consent to being contacted by the team</label>
       </div>
+      <small class="form-main_input-wrapper__error-msg disabled-visibility">To submit this form, please consent to be
+        contacted</small>
     </div>
 
     <button class="form-main__btn-submit" type="submit">submit</button>
