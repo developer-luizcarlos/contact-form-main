@@ -4,22 +4,24 @@ body {
     background-color: var(--green-200);
     display: grid;
     place-items: center;
+    overflow-x: hidden;
 }
 
 .form-main {
-    width: 540px;
-    padding: 15px 20px;
+    width: 520px;
+    padding: 23px 20px;
     color: var(--grey-900);
     border-radius: 3px;
     box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.068);
     background-color: var(--white);
-    display: flex;
+    display: block;
     flex-direction: column;
-    row-gap: 7px;
+    row-gap: 9px;
 }
 
 .form-main__title {
     text-transform: capitalize;
+    margin-bottom: 6px;
 }
 
 .form-main__form-header,
@@ -37,7 +39,8 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: .10fr 1fr .10fr;
-    row-gap: 6px;    
+    row-gap: 6px;
+    margin-bottom: 3px;
 }
 
 .form-main__input-wrapper__label {
@@ -89,7 +92,7 @@ body {
 }
 
 .form-main__textarea-for-user {
-    height: 90px;
+    height: 78px;
     resize: none;
 }
 
@@ -98,6 +101,7 @@ body {
     display: flex;
     flex-direction: column;
     row-gap: 4px;
+    margin-block: 7px;
 }
 
 .form-main__data-consent-wrapper__consent-header {
@@ -127,4 +131,43 @@ body {
     color: var(--green-200);
     font-size: 1rem;
     font-weight: 700;
+}
+
+.dialog-login-success {
+    width: 370px;
+    height: 90px;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    padding: 14px;
+    margin: auto;
+    margin-bottom: 30px;
+    color: var(--white);
+    background-color: var(--grey-900);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 10px;
+}
+
+
+.dialog-login-success.dialog-hidden {
+    display: none;
+}
+
+.dialog-title {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.dialog-title h5 {
+    text-transform: capitalize;
+}
+
+.dialog-message {
+    font-size: .83rem;
 }

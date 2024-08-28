@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Frontend Mentor | Contact form</title>
   <link rel="stylesheet" href="assets/css/pages/index/index.css">
+  <link rel="stylesheet" href="assets/css/pages/index/media.css" media="(max-width: 768px)">
   <script src="assets/js/index/index.js" defer></script>
 </head>
 
@@ -69,6 +70,16 @@
 
     <button class="form-main__btn-submit" type="submit">submit</button>
   </form>
+
+  <dialog class="dialog-login-success dialog-hidden" role="alertdialog">
+    <div class="dialog-title">
+      <img src="assets/images/icon-success-check.svg" alt="success icon">
+      <h5>message sent</h5>
+    </div>
+    <p class="dialog-message">
+      Thanks for completing the form. We&apos;ll be in touch soon!
+    </p>
+  </dialog>
 </body>
 
 </html>

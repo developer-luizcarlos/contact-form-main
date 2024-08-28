@@ -22,6 +22,7 @@ const [
 ] = Array.from(
   document.querySelectorAll(".form-main_input-wrapper__error-msg")
 );
+const dialogLoginSuccess = document.querySelector(".dialog-login-success");
 
 // verify if the input value is empty for check name, lastname and textarea fields;
 const validityInputValue = (value, errorMsgElement) => {
@@ -33,8 +34,11 @@ const validityInputValue = (value, errorMsgElement) => {
 const isEmailAddressValid = (emailValue, errorMsgElement) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const emailValid = emailRegex.test(emailValue);
-  if (!emailValid) errorMsgElement.classList.remove("disabled-visibility");
-  else errorMsgElement.classList.add("disabled-visibility");
+  if (!emailValid) {
+    errorMsgElement.classList.remove("disabled-visibility");
+  } else {
+    errorMsgElement.classList.add("disabled-visibility");
+  }
 };
 
 formMain.onsubmit = (event) => event.preventDefault();
@@ -73,7 +77,52 @@ btnSubmit.onclick = () => {
     !dataConsentInput.checked ||
     !whichRequestIsChecked;
 
-  if (isFormInvalid) alert("Valores inválidos");
-  else alert("Tudo ok");
-  console.log(whichRequestIsChecked);
+  // verify which component of input's group contain some error and show your message error;
+  const whichErrorsValidExist = () => {
+    if (!isNotEmptyFormValue[0]) {
+      formName.classList.add("input-wrapper-invalid-error");
+      nameErrorMsg.classList.remove("disabled-visibility");
+    } else {
+      formName.classList.remove("input-wrapper-invalid-error");
+      nameErrorMsg.classList.add("disabled-visibility");
+    }
+    if (!isNotEmptyFormValue[1]) {
+      formLastName.classList.add("input-wrapper-invalid-error");
+      lastNameErrorMsg.classList.remove("disabled-visibility");
+    } else {
+      lastNameErrorMsg.classList.add("disabled-visibility");
+    }
+    if (
+      !isNotEmptyFormValue[2] ||
+      !emailErrorMsg.classList.contains("disabled-visibility")
+    ) {
+      emailErrorMsg.classList.remove("disabled-visibility");
+    } else {
+      emailErrorMsg.classList.add("disabled-visibility");
+    }
+    if (!isNotEmptyFormValue[3]) {
+      textareaMsg.classList.remove("disabled-visibility");
+    } else {
+      textareaMsg.classList.add("disabled-visibility");
+    }
+    if (!whichRequestIsChecked) {
+      requestErrorMsg.classList.remove("disabled-visibility");
+    } else {
+      requestErrorMsg.classList.add("disabled-visibility");
+    }
+    if (!dataConsentInput.checked) {
+      consentCheckboxMsg.classList.remove("disabled-visibility");
+    } else {
+      consentCheckboxMsg.classList.add("disabled-visibility");
+    }
+  };
+
+  if (isFormInvalid) {
+    const isDialogHidden =
+      dialogLoginSuccess.classList.contains("dialog-hidden");
+    if (!isDialogHidden) dialogLoginSuccess.classList.add("dialog-hidden");
+    whichErrorsValidExist();
+  } else {
+    dialogLoginSuccess.classList.remove("dialog-hidden");
+  }
 };

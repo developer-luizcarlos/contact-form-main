@@ -1,0 +1,17 @@
+.form-main {
+    width: 350px;
+    gap: 25px;
+}
+
+.form-main__form-header,
+.form-main__contact-type-wrapper {
+    column-gap: 8px;
+}
+
+.form-main__input-wrapper__label {
+    font-size: .85rem;
+}
+
+.form-main__data-consent-wrapper__consent-header label {
+    font-size: .90rem;
+}
