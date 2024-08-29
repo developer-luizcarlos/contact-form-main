@@ -158,6 +158,21 @@ body {
     display: none;
 }
 
+.dialog__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dialog__close {
+    color: var(--green-200);
+    font-size: .80rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
 .dialog-title {
     display: flex;
     align-items: center;

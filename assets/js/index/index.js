@@ -23,6 +23,7 @@ const [
   document.querySelectorAll(".form-main_input-wrapper__error-msg")
 );
 const dialogLoginSuccess = document.querySelector(".dialog-login-success");
+const dialogClose = document.querySelector(".dialog__close");
 
 // verify if the input value is empty for check name, lastname and textarea fields;
 const validityInputValue = (value, errorMsgElement) => {
@@ -90,19 +91,24 @@ btnSubmit.onclick = () => {
       formLastName.classList.add("input-wrapper-invalid-error");
       lastNameErrorMsg.classList.remove("disabled-visibility");
     } else {
+      formLastName.classList.remove("input-wrapper-invalid-error");
       lastNameErrorMsg.classList.add("disabled-visibility");
     }
     if (
       !isNotEmptyFormValue[2] ||
       !emailErrorMsg.classList.contains("disabled-visibility")
     ) {
+      formEmail.classList.add("input-wrapper-invalid-error");
       emailErrorMsg.classList.remove("disabled-visibility");
     } else {
+      formEmail.classList.remove("input-wrapper-invalid-error");
       emailErrorMsg.classList.add("disabled-visibility");
     }
     if (!isNotEmptyFormValue[3]) {
+      formTextarea.classList.add("input-wrapper-invalid-error");
       textareaMsg.classList.remove("disabled-visibility");
     } else {
+      formTextarea.classList.remove("input-wrapper-invalid-error");
       textareaMsg.classList.add("disabled-visibility");
     }
     if (!whichRequestIsChecked) {
@@ -111,8 +117,10 @@ btnSubmit.onclick = () => {
       requestErrorMsg.classList.add("disabled-visibility");
     }
     if (!dataConsentInput.checked) {
+      dataConsentInput.classList.add("input-wrapper-invalid-error");
       consentCheckboxMsg.classList.remove("disabled-visibility");
     } else {
+      dataConsentInput.classList.remove("input-wrapper-invalid-error");
       consentCheckboxMsg.classList.add("disabled-visibility");
     }
   };
@@ -125,4 +133,37 @@ btnSubmit.onclick = () => {
   } else {
     dialogLoginSuccess.classList.remove("dialog-hidden");
   }
+};
+
+dialogClose.onclick = () => {
+  dialogLoginSuccess.classList.add("dialog-hidden");
+
+  const formElements = [formName, formLastName, formEmail, formTextarea];
+  formElements.forEach((element) => {
+    element.value = "";
+  });
+
+  const errorMsgs = Array.from(
+    document.querySelectorAll(".form-main_input-wrapper__error-msg")
+  );
+
+  errorMsgs.forEach((element) => {
+    if (!element.classList.contains("disabled-visibility")) {
+      element.classList.add("disabled-visibility");
+    }
+  });
+
+  const elementsInputModel = Array.from(
+    document.querySelectorAll(".form-main__input-wrapper__input-model")
+  );
+
+  elementsInputModel.forEach((element) => {
+    if (element.classList.contains("input-wrapper-invalid-error")) {
+      element.classList.remove("input-wrapper-invalid-error");
+    }
+  });
+
+  queryTypeInput.checked = false;
+  supportRequestInput.checked = false;
+  dataConsentInput.checked = false;
 };
